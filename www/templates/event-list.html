@@ -1,0 +1,28 @@
+<ion-view >
+    <div class="homewrap">
+        <ion-content>
+            <div class="list card">
+
+                <div ng-repeat="event in events">
+                    <div class="item item-avatar">
+                        <img src="avatar.jpg">
+                        <h2>Pretty Hate Machine</h2>
+                        <p>Nine Inch Nails</p>
+                    </div>
+
+                    <div class="item item-image">
+                        <img src="{{event.picture}}">
+                    </div>
+
+                    <a class="item item-icon-left assertive" href="#">
+                        <i class="icon ion-music-note"></i>
+                        Start listening
+                    </a>
+                </div>
+
+
+            </div>
+
+        </ion-content>
+    </div>
+</ion-view>

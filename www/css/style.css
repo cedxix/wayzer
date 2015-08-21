@@ -1,1 +1,25 @@
 /* Empty. Add your own CSS if you like */
+body  {
+}
+
+.homewrap {
+    display: flexbox;
+    text-align: center;
+    align-self: center;
+}
+.homewrap .logo{
+    margin: 10% 5% auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.item-image > img{
+    width: 100%;
+    overflow: hidden;
+}
+
+.landpage-background{
+}
