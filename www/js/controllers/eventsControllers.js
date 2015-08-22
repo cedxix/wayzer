@@ -8,10 +8,9 @@ app.controller('eventController', function ($scope){
                 "date": 1410328158691,
                 "name": "Chill on Sundays",
                 "picture": "img/events/chill/feature-image.png",
-                "description": "Chill chill and chill",
                 "status": "open",
                 "id": "JWT5y43YFy1mGirVVS2",
-                "description" : "Plus qu'une terrasse, qu'une piscine ou qu'un dj. La Chill vous accueille chaque week-end d'été.",
+                "description" : "Plus qu'une terrasse, qu'une piscine ou qu'un dj. La Chill vous accueille chaque week-end d'Ã©tÃ©.",
                 "media" : {
                     "youtube" : "https://www.youtube.com/watch?v=7c06HBE5AEA"
                 },
@@ -47,9 +46,8 @@ app.controller('eventController', function ($scope){
                 "date": 2000328158000,
                 "name": "Hip Hop vs Dancehall",
                 "picture": "img/events/hip/11807394_1197868100239122_1167823382180612101_o.jpg",
-                "description": "Chill chill and chill",
                 "id": "JWT5y43YFpqmGirVVS2",
-                "description" : "Plus qu'une terrasse, qu'une piscine ou qu'un dj. La Chill vous accueille chaque week-end d'été.",
+                "description" : "Plus qu'une terrasse, qu'une piscine ou qu'un dj. La Chill vous accueille chaque week-end d'Ã©tÃ©.",
                 "promotor": {
                     "Id": "Dj Keep"
                 },

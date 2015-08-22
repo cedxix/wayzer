@@ -1,27 +1,41 @@
-<ion-view >
+<ion-view style="background: #fafafa; " >
     <div class="homewrap">
-        <ion-content>
-            <div class="list card">
+        <ion-content class="padding">
 
-                <div ng-repeat="event in events">
-                    <div class="item item-avatar">
-                        <img src="avatar.jpg">
-                        <h2>Pretty Hate Machine</h2>
-                        <p>Nine Inch Nails</p>
-                    </div>
 
-                    <div class="item item-image">
-                        <img src="{{event.picture}}">
-                    </div>
+          <ion-list>
+            <ion-list ng-repeat="event in events" class="padding">
+              <div class="item item-avatar">
+                <img src="http://placehold.it/80x80">
+                <h2 class="title">{{ event.promotor.Id }}</h2>
+                <p>Best slogan coming here!</p>
+              </div>
 
-                    <a class="item item-icon-left assertive" href="#">
-                        <i class="icon ion-music-note"></i>
-                        Start listening
-                    </a>
+              <div class="item item-image">
+                <img ng-src=""
+                  style="background-image: url({{event.picture}});
+                  -webkit-background-size: cover;background-size: cover;
+                  display: block;
+                  height: 180px;
+                  background-position: center center;">
+              </div>
+
+              <div class="item item-icon-left padding" >
+                <div class="item-content">
+                 <h3 class=""> {{ event.date | date}}</h3>
                 </div>
+              </div>
 
-
-            </div>
+              <div class="item padding">
+                <div class="row">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                </div>
+              </div>
+          </ion-list>
 
         </ion-content>
     </div>
