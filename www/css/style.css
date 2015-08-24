@@ -1,25 +1,34 @@
-/* Empty. Add your own CSS if you like */
-body  {
+.star > .item-content {
+  background-color: #EEE8D6 !important;
 }
 
-.homewrap {
-    display: flexbox;
-    text-align: center;
-    align-self: center;
-}
-.homewrap .logo{
-    margin: 10% 5% auto;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
+.splash {
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
 }
 
-.item-image > img{
-    width: 100%;
-    overflow: hidden;
+.branding{
+  max-width: 300px;
+  margin: 40% auto;
+  text-align: center;
 }
 
-.landpage-background{
+.branding p {
+  margin-top: 10px;
+  font-size: 1rem;
 }
+
+.tagline{
+  font-size: 3.5em;
+}
+
+.picture {
+  margin: 0 auto;
+  width:200px;
+  height: 200px;
+}
+
