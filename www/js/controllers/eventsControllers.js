@@ -32,8 +32,8 @@ app.controller('eventController', function ($scope) {
         }]
       }],
     "promotors": [
-      {"id": 0, "name": "La Chill", "logo_url": "img/events/chill/logo-chill.png"},
-      {"id": 1, "name": "Dj Keep Dk", "logo_url": "img/events/hip/11807394_1197868100239122_1167823382180612101_o.jpg"}
+      {"id": 0, "name": "La Chill", "logo_url": "img/events/chill/logo-chill.png", "likes" : 75},
+      {"id": 1, "name": "Dj Keep Dk", "logo_url": "img/events/hip/11807394_1197868100239122_1167823382180612101_o.jpg" , "likes" : 11}
     ]
   };
 
@@ -41,5 +41,19 @@ app.controller('eventController', function ($scope) {
   $scope.getPromotor = function (Id) {
     return events.promotors[Id];
   }
+
+
+  $scope.searchVisible = false;
+  $scope.showSearchInput = function (){
+    if ($scope.searchVisible === true){
+      $scope.searchVisible = false
+    }else{
+      $scope.searchVisible = true;
+    }
+
+    $scope.formtatDate = function (timestamp){
+      console.log(moment(timestamp).format('llll'));
+      return moment(timestamp).format('llll');
+    }
+  }
 })
-;

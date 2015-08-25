@@ -1,19 +1,19 @@
-<ion-view style="background: #fafafa; ">
+<ion-view style="background: #f4f4f4; ">
 
   <ion-content>
 
-    <div class="list">
+    <div class="list list-inset">
       <label class="item item-input">
-        <i class="icon ion-search"></i>
+        <i class="icon ion-search placeholder-icon"></i>
         <input type="text" placeholder="Rechercher un event" ng-model="search">
       </label>
     </div>
 
-    <div class="list padding">
-      <div ng-class="item" ng-repeat="event in events | filter: search" class="padding">
+    <div class="list ">
+      <div ng-class="item" collection-repeat="event in events | filter: search" class="padding">
 
 
-        <a href="#/details/{{event.id}}" style="text-decoration: none;">
+        <a href="#/events/{{event.id}}/details" style="text-decoration: none;">
           <div class="item item-image">
 
             <img ng-src=""
@@ -24,21 +24,15 @@
                   background-position: center center;">
           </div>
 
-          <!--<div class="item item-avatar">-->
-            <!--<img ng-src="{{ getPromotor(event.promotorId).logo_url }}">-->
-
-            <!--<h2 class="title h1 bold">{{ getPromotor(event.promotorId).name }}</h2>-->
-
-
-            <!--<p>Promotor slogan here ! </p>-->
-          <!--</div>-->
-
           <div class="item item-text-wrap">
-            <div class="h3 text-center"> {{ event.name }}</div>
+            <div class="h3 text-center "> {{ event.name }}</div>
             <p class="text-center" style="font-size:12px">
-              <span class="icon icon-left"><i class="icon ion-calendar"></i> {{event.date | date:'dd/mm/yyyy'}}</span> -
-              <span class="icon icon-left">
-                <i class="icon ion-android-time"></i>  {{event.date | date:'hh:mm'}}</span>
+              <span class="h5">
+                <i class="fa fa-calendar-check-o"></i>
+                {{formtatDate (event.date)}}
+                {{event.date | date:'dd/mm/yyyy'}}
+              </span> à
+              <span class="h5">{{formtatDate (event.date)}}</span>
             </p>
 
             <p class="text-center" style="font-size:12px" ng-show="event.location">
@@ -46,14 +40,21 @@
             </p>
 
             <p class="text-center" style="font-size:12px" ng-show="event.location">
-
-              <span class="icon icon-left item-text-wrap"><i class="icon ion-android-person"></i> {{event.location}}</span>
+              <i class="icon ion-android-person"></i>
+              {{ getPromotor(event.promotorId).name}}
+              </span> -
+               <span class="icon icon-left item-text-wrap">
+                <i class="fa fa-heart assertive"></i>
+                {{ getPromotor(event.promotorId).likes}}
+              </span>
             </p>
-            <button class="item button button-block button-small">
-              Tickets
-            </button>
 
           </div>
+          <a href="#/events/{{event.id}}/details" class="item button button-block button-dark  button-small">
+            Details & Billets
+            <i class="fa fa-ticket"></i>
+          </a>
+
         </a>
 
       </div>
