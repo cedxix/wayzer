@@ -1,4 +1,4 @@
-<ion-view style="background: #f4f4f4; ">
+<ion-view style="background: #f4f4f4;" view-title="Search event">
 
   <ion-content>
 
@@ -9,52 +9,46 @@
       </label>
     </div>
 
-    <div class="list ">
+    <div class="list">
       <div ng-class="item" collection-repeat="event in events | filter: search" class="padding">
 
+        <div class="item item-image">
 
-        <a href="#/events/{{event.id}}/details" style="text-decoration: none;">
-          <div class="item item-image">
-
-            <img ng-src=""
-                 style="background-image: url({{event.picture}});
+          <img ng-src=""
+               style="background-image: url({{event.picture}});
                   -webkit-background-size: cover;background-size: cover;
                   display: block;
                   height: 180px;
-                  background-position: center center;">
-          </div>
+                  background-position: center center;"/>
+        </div>
 
-          <div class="item item-text-wrap">
-            <div class="h3 text-center "> {{ event.name }}</div>
-            <p class="text-center" style="font-size:12px">
+        <div class="item item-text-wrap">
+          <div class="h3 text-center "> {{ event.name }}</div>
+          <p class="text-center" style="font-size:12px">
               <span class="h5">
                 <i class="fa fa-calendar-check-o"></i>
-                {{formtatDate (event.date)}}
-                {{event.date | date:'dd/mm/yyyy'}}
-              </span> à
-              <span class="h5">{{formtatDate (event.date)}}</span>
-            </p>
+                {{formtatDate (event.date, 'full')}}
+              </span>
+          </p>
 
-            <p class="text-center" style="font-size:12px" ng-show="event.location">
-              <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
-            </p>
+          <p class="text-center" style="font-size:12px" ng-show="event.location">
+            <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
+          </p>
 
-            <p class="text-center" style="font-size:12px" ng-show="event.location">
-              <i class="icon ion-android-person"></i>
-              {{ getPromotor(event.promotorId).name}}
-              </span> -
+          <p class="text-center" style="font-size:12px" ng-show="event.location">
+            <i class="icon ion-android-person"></i>
+            {{ getPromotor(event.promotorId).name}}
+            </span> -
                <span class="icon icon-left item-text-wrap">
                 <i class="fa fa-heart assertive"></i>
                 {{ getPromotor(event.promotorId).likes}}
               </span>
-            </p>
+          </p>
 
-          </div>
-          <a href="#/events/{{event.id}}/details" class="item button button-block button-dark  button-small">
-            Details & Billets
-            <i class="fa fa-ticket"></i>
-          </a>
-
+        </div>
+        <a href="#/events/{{event.id}}/details" class="item button button-block button-dark  button-small">
+          Details & Billets
+          <i class="fa fa-ticket"></i>
         </a>
 
       </div>

@@ -16,9 +16,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
   });
 
-  $stateProvider.state('events/:id/details', {
-    url: '/events/:id/details',
-    templateUrl: 'templates/event-details.html'
+  $stateProvider.state('events/:eId/details', {
+    url: '/events/:eId/details',
+    templateUrl: 'templates/event-details.html',
+    controller: 'eventDetailsController'
 
   });
 

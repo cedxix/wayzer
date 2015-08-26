@@ -1,7 +1,10 @@
+
 /**
- * Created by DougoueCedric on 20/08/2015.
+ * Created by DougoueCedric on 26/08/2015.
  */
-app.controller('eventController', function ($scope) {
+
+
+app.controller('eventDetailsController', function ($scope, $state) {
   var events =
   {
     "events": [{
@@ -175,14 +178,7 @@ app.controller('eventController', function ($scope) {
     ]
   };
 
+  $scope.eventId = $state.params.eId;
   $scope.events = events.events;
-  $scope.getPromotor = function (Id) {
-    return events.promotors[Id];
-  };
-
-  $scope.formtatDate = function (timestamp, arg) {
-    console.log(timestamp);
-    return 'full' === arg ? moment(timestamp).format('llll') : moment(timestamp).format('ll');
-  }
 
 });
