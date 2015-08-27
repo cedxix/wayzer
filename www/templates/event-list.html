@@ -11,11 +11,13 @@
 
     <div class="list">
       <div ng-class="item" collection-repeat="event in events | filter: search" class="padding">
+        <div class="row">
 
+        </div>
         <div class="item item-image">
 
-          <img ng-src=""
-               style="background-image: url({{event.picture}});
+          <img
+            style="background-image: url({{event.picture}});
                   -webkit-background-size: cover;background-size: cover;
                   display: block;
                   height: 180px;
@@ -24,18 +26,18 @@
 
         <div class="item item-text-wrap">
           <div class="h3 text-center "> {{ event.name }}</div>
-          <p class="text-center" style="font-size:12px">
+          <div class="text-center" style="font-size:12px">
               <span class="h5">
                 <i class="fa fa-calendar-check-o"></i>
                 {{formtatDate (event.date, 'full')}}
               </span>
-          </p>
+          </div>
 
-          <p class="text-center" style="font-size:12px" ng-show="event.location">
+          <div class="text-center" style="font-size:12px" ng-show="event.location">
             <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
-          </p>
+          </div>
 
-          <p class="text-center" style="font-size:12px" ng-show="event.location">
+          <div class="text-center" style="font-size:12px" ng-show="event.promotorId !== null">
             <i class="icon ion-android-person"></i>
             {{ getPromotor(event.promotorId).name}}
             </span> -
@@ -43,7 +45,7 @@
                 <i class="fa fa-heart assertive"></i>
                 {{ getPromotor(event.promotorId).likes}}
               </span>
-          </p>
+          </div>
 
         </div>
         <a href="#/events/{{event.id}}/details" class="item button button-block button-dark  button-small">
@@ -52,7 +54,6 @@
         </a>
 
       </div>
-
     </div>
 
   </ion-content>

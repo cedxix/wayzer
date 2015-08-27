@@ -1,20 +1,60 @@
-<ion-view style="background: #fafafa;" view-title="{{ events}}">
+<ion-view style="background: #fafafa;" view-title="Get Ticket">
 
-  <ion-content>
+  <ion-content class="padding">
 
 
-    <div class="list padding">
-      <div class="item">
-        <div class="">{{ eventId }}</div>
+    <div class="list">
+
+      <div class="item item-image" ng-repeat=" event in events | filter: {id : eventId}">
+        <a class="item item-avatar" href="#">
+          <img src=" {{ getPromotor(event.promotorId).logo_url}}">
+
+          <h2 class="text-center">{{ getPromotor(event.promotorId).name}}</h2>
+
+          <p>{{ getPromotor(event.promotorId).slogan}}</p>
+        </a>
+
+        <div
+          style="background-image: url({{event.picture}});
+                  -webkit-background-size: cover;background-size: cover;
+                  display: block;
+                  height: 180px;
+                  background-position: center center;"></div>
+
+        <div class="item item-text-wrap">
+          <div class="h3 text-center "> {{ event.name }}</div>
+          <div class="text-center" style="font-size:12px">
+              <span class="h5">
+                <i class="fa fa-calendar-check-o"></i>
+                {{formtatDate (event.date, 'full')}}
+              </span>
+          </div>
+
+          <div class="text-center" style="font-size:12px" ng-show="event.location">
+            <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
+          </div>
+        </div>
+
+        <div class="item item-text-wrap">
+          {{ event.description }}
+        </div>
+
+        <div class="item">
+          <table class="fa-table">
+            <thead>
+            <td>Tycket type</td>
+            <td>Prix</td>
+            <td>Qte</td>
+            </thead>
+
+          </table>
+        </div>
+
       </div>
-      <div class="item list-inset">
-        <div class="">{{ eventId }}</div>
-      </div>
-      <div class="item list-inset">
-        <div class="">{{ eventId }}</div>
-      </div>
+
 
     </div>
+
 
   </ion-content>
 
