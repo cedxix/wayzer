@@ -11,16 +11,12 @@
 
     <div class="list">
       <div ng-class="item" collection-repeat="event in events | filter: search" class="padding">
-        <div class="row">
-
-        </div>
         <div class="item item-image">
-
           <img
             style="background-image: url({{event.picture}});
                   -webkit-background-size: cover;background-size: cover;
                   display: block;
-                  height: 180px;
+                  height: 100px;
                   background-position: center center;"/>
         </div>
 
@@ -33,9 +29,6 @@
               </span>
           </div>
 
-          <div class="text-center" style="font-size:12px" ng-show="event.location">
-            <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
-          </div>
 
           <div class="text-center" style="font-size:12px" ng-show="event.promotorId !== null">
             <i class="icon ion-android-person"></i>
@@ -47,11 +40,13 @@
               </span>
           </div>
 
+
         </div>
-        <a href="#/events/{{event.id}}/details" class="item button button-block button-dark  button-small">
+        <a href="#/events/1/details" class="item button button-block button-dark  button-small">
           Details & Billets
           <i class="fa fa-ticket"></i>
         </a>
+
 
       </div>
     </div>

@@ -1,11 +1,16 @@
 <ion-view style="background: #fafafa;" view-title="Get Ticket">
 
-  <ion-content class="padding">
-
+  <ion-content class="padding" ng-repeat=" event in events | filter: {'id': eventId}">
+    <div
+      style="background-image: url({{event.picture}});
+                  -webkit-background-size: cover;background-size: cover;
+                  display: block;
+                  height: 180px;
+                  background-position: center center;"></div>
 
     <div class="list">
-
-      <div class="item item-image" ng-repeat=" event in events | filter: {id : eventId}">
+<h1>Promo +  {{ promotor}}</h1>
+      <div class="item item-image" >
         <a class="item item-avatar" href="#">
           <img src=" {{ getPromotor(event.promotorId).logo_url}}">
 
@@ -13,14 +18,6 @@
 
           <p>{{ getPromotor(event.promotorId).slogan}}</p>
         </a>
-
-        <div
-          style="background-image: url({{event.picture}});
-                  -webkit-background-size: cover;background-size: cover;
-                  display: block;
-                  height: 180px;
-                  background-position: center center;"></div>
-
         <div class="item item-text-wrap">
           <div class="h3 text-center "> {{ event.name }}</div>
           <div class="text-center" style="font-size:12px">
@@ -38,6 +35,7 @@
         <div class="item item-text-wrap">
           {{ event.description }}
         </div>
+
 
         <div class="item">
           <table class="fa-table">
