@@ -2,7 +2,7 @@
   "name": "wayzerapp",
   "version": "1.0.0",
   "description": "wayzerapp: An Ionic project",
-    "cordovaPlugins": [
+  "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
@@ -10,9 +10,6 @@
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "locator": "windows"
-    }
+    "android"
   ]
 }
