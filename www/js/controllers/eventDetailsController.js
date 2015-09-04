@@ -18,7 +18,7 @@ app.controller('eventDetailsController',
           return 'full' === arg ? moment(timestamp).format('llll') : moment(timestamp).format('ll');
         };
 
-        $scope.getPromotor = function (id) {
+        var getPromotor = function (id) {
 
           for (var i = 0; i < data.promotors.length; i++) {
             console.log("promotor : " + data.promotors[i].name);
@@ -33,7 +33,7 @@ app.controller('eventDetailsController',
 
         var id = $state.params.eId;
         $scope.promotor = getPromotor(id);
-        console.log("sssssss" + promotor)
+
 
 
       });

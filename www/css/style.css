@@ -9,13 +9,30 @@
   -o-background-size: cover;
   background-size: cover;
   color: #fff;
+  display: block;
+  align-content: center;
+  align-self: center;
 }
 
 .branding{
-  max-width: 300px;
-  margin: 40% auto;
+  width: 100%;
   text-align: center;
+  display: block;
+  position: relative;
+  top:50%;
+  margin:46% auto;
+  float: left;
+
 }
+
+.list a{
+  text-decoration: none;
+}
+
+.event-title{
+  color: #387ef5;
+}
+
 
 .branding p {
   margin-top: 10px;
