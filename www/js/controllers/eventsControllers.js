@@ -11,6 +11,7 @@ app.controller('eventController', function ($scope, $http, $state) {
         return data.promotors[Id];
       };
 
+
       $scope.formtatDate = function (timestamp, arg) {
         console.log(timestamp);
         return 'full' === arg ? moment(timestamp).format('llll') : moment(timestamp).format('ll');

@@ -1,14 +1,47 @@
-<ion-view hide-nav-bar="true" view-title="Home">
+<ion-view hide-nav-bar="true" view-title="Home" class="welcome-view">
 
-  <ion-content class="splash padding">
-    <div class="branding">
-      <div class="tagline">Welcome</div>
-      <p>
-        Achètes les tickets des meilleurs events !
-      </p>
-      <p>
-        <a href="#/events" class="button button-calm">Commencer</a>
-      </p>
+  <ion-content class="splash padding" scroll="false">
+
+    <div class="top-content row">
+      <div class="app-copy col col-top">
+        <h1 class="app-logo">Wayzer</h1>
+        <p class="app-tagline">
+          Découvres les meilleurs events et achètes tes tickets !
+        </p>
+      </div>
     </div>
-  </ion-content>
+
+
+    <div class="bottom-content row">
+      <div class="col col-bottom">
+        <a class="google-sign-in button button-block" href="#/events" ng-click="googleSignIn()">
+          <span class="btn-copy">Commencer !!</span>
+        </a>
+        <div class="row split-actions">
+          <div class="col">
+            <a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">
+              Facebook
+            </a>
+          </div>
+          <div class="col">
+            <a class="twitter-sign-in button button-block" ng-click="twitterSignIn()">
+              Twitter
+            </a>
+          </div>
+        </div>
+        <div class="row split-actions other-actions">
+          <div class="col">
+            <a class="button button-block button-clear" ng-click="showLogIn()">
+              Sign In with Email
+            </a>
+          </div>
+          <div class="col">
+            <a class="button button-block button-clear" ng-click="showSignUp()">
+              Create Account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </ion-view>

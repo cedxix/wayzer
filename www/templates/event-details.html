@@ -15,45 +15,122 @@
       <p>{{ promotor.slogan}}</p>
     </div>
 
-    <div class="button-bar item">
-      <a class="button button-small button-light">
-        <i class="fa fa-heart assertive"></i>
-        Likes ({{promotor.likes}})
-      </a>
-      <a class="button button-small button-light">
-        <i class="fa fa-share-alt"></i>
-        share on</a>
-    </div>
+<div class="item" >
+  <div class="button-bar">
+    <a class="button button-small button-light">
+      <i class="fa fa-heart assertive"></i>
+      Likes
+    </a>
+    <a class="button button-small button-light" ng-click="toggleBuyItem()" ng-show="!readyToBuy">
+      <i class="fa fa-credit-card "></i>
+      Buy Tickets
+    </a>
+    <a class="button button-small button-assertive" ng-click="toggleBuyItem()" ng-show="readyToBuy">
+      <i class="fa fa-credit-card "></i>
+      Buy Tickets
+    </a>
 
-    <div class="list-inset item item-text-wrap">
-      <div class="h3 text-center "> {{ event.name }}</div>
-      <div class="text-center" style="font-size:12px">
-              <span class="h5">
-                <i class="fa fa-calendar-check-o"></i>
-                {{formtatDate (event.date, 'full')}}
-              </span>
-      </div>
-      <hr/>
-      <div class="text-center" style="font-size:12px" ng-show="event.location">
-        <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
-      </div>
-      <div class="text-center" style="font-size:12px" ng-show="event.private">
-            <span class="icon icon-left item-text-wrap"
-                  ng-show="event.private =='no'"><i class="icon ion-android-pin"></i> {{event.private}}</span>
-      </div>
-    </div>
+    <a class="button button-small button-light">
+      <i class="fa fa-share-alt"></i>
+      share on</a>
+  </div>
+</div>
 
-    <div class="list-inset item item-text-wrap">
+<div class="details-wrapper" ng-show="!readyToBuy">
+  <div class="list-inset item item-text-wrap">
+    <div class="h3 text-center "> {{ event.name }}</div>
+    <div class="text-center" style="font-size:12px">
+            <span class="h5">
+              <i class="fa fa-calendar-check-o"></i>
+              {{formtatDate (event.date, 'full')}}
+            </span>
+    </div>
+    <hr/>
+    <div class="text-center" style="font-size:12px" ng-show="event.location">
+      <span class="icon icon-left item-text-wrap"><i class="icon ion-android-pin"></i> {{event.location}}</span>
+    </div>
+  </div>
+</div>
+
+
+    <div class="list-inset item item-text-wrap" ng-show="!readyToBuy">
       {{ event.description }}
     </div>
 
+    <div class="list-inset item item-text-wrap" ng-show="readyToBuy">
+      <h3>Achetez vos tickets!</h3>
+      <hr>
+      <form action="#">
+        <div class="row">
+          <div class="col">Tickets</div>
+          <div class="col">Prix</div>
+          <div class="col">Qte</div>
+        </div>
 
-    <div class="list-inset item item-text-wrap">
-      <div class="row">
-        <div class="col">.col</div>
+        <div class="row">
+          <div class="col">Golden Pass </div>
+          <div class="col">100€ </div>
+          <div class="col">
+            <select name="" id="">
+              <option value="">0</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+              <option value="">7</option>
+              <option value="">8</option>
+              <option value="">9</option>
+              <option value="">10</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">VIP Pass</div>
+          <div class="col">60 €</div>
+          <div class="col">
+            <select name="" id="">
+              <option value="">0</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+              <option value="">7</option>
+              <option value="">8</option>
+              <option value="">9</option>
+              <option value="">10</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">Basic</div>
+          <div class="col">15 €</div>
+          <div class="col">
+            <select name="" id="">
+              <option value="">0</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+              <option value="">7</option>
+              <option value="">8</option>
+              <option value="">9</option>
+              <option value="">10</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      
+      <a href="" class="item button button-block  button-small icon icon-right">
+        Payer
+      <i class=" fa fa-credit-card"></i></a>
 
       </div>
-    </div>
 
 
   </ion-content>
